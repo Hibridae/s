@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Zooming Eyes</title>
+	<style>
+		body {
+			background-color: black;
+		}
+
+		#eyes {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			width: 100px;
+			height: 40px;
+			animation: zoom 5s infinite alternate ease-in-out;
+		}
+
+		#eyes:before, #eyes:after {
+			content: "";
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			width: 20px;
+			height: 20px;
+			background-color: white;
+			border-radius: 50%;
+			animation: zoom 5s infinite alternate ease-in-out;
+		}
+
+		#eyes:before {
+			left: -30px;
+		}
+
+		#eyes:after {
+			left: 30px;
+		}
+
+		@keyframes zoom {
+			0% {
+				transform: scale(1);
+			}
+			50% {
+				transform: scale(1.2);
+			}
+			100% {
+				transform: scale(1);
+			}
+		}
+	</style>
+</head>
+<body>
+	<div id="eyes"></div>
+</body>
+</html>
